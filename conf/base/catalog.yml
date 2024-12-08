@@ -1,0 +1,6 @@
+base_clientes_monopoly:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/Base_clientes_Monopoly.csv
+  load_args:
+    sep: ";"
+    chunksize: 1000

@@ -84,3 +84,6 @@ select = [
     "T201", # Print Statement
 ]
 ignore = ["E501"]  # Ruff format takes care of line-too-long
+
+[tool.kedro_telemetry]
+project_id = "e7ecd6571dec477291dd000ebf9d9a2e"

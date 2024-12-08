@@ -98,3 +98,7 @@ To automatically strip out all output cell contents before committing to `git`, 
 ## Package your Kedro project
 
 [Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
+
+
+## Datos necesarios
+- Coloca el archivo `Base_clientes_Monopoly.csv` en la carpeta `data/01_raw/` antes de ejecutar el pipeline.
