@@ -36,6 +36,21 @@ def clean_and_rename_data(data: pd.DataFrame) -> pd.DataFrame:
 
     return data
 
+def create_target(data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Crea la columna 'target' indicando clientes activos (1) o inactivos (0).
+    Regla: Activo si renta > 100,000, inactivo en caso contrario.
+    """
+    # Verifica que la columna 'Renta' existe
+    if 'Renta' not in data.columns:
+        raise KeyError("La columna 'Renta' no se encuentra en el dataset.")
+    
+    # Crear columna target
+    data['target'] = (data['Renta'] > 100000).astype(int)
+    
+    # Validar distribución del target
+    print(f"Distribución del target:\n{data['target'].value_counts()}")
+    return data
 
 
 def transform_data(data: pd.DataFrame) -> pd.DataFrame:
@@ -70,3 +85,4 @@ def select_features(data: pd.DataFrame) -> pd.DataFrame:
     data = data[selected_columns]
     print("Datos finales seleccionados:", data.head())
     return data
+

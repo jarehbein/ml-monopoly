@@ -4,7 +4,7 @@ generated using Kedro 0.19.9
 """
 
 from kedro.pipeline import Pipeline, node
-from .nodes import clean_and_rename_data , transform_data, select_features
+from .nodes import clean_and_rename_data , create_target, transform_data, select_features
 
 def create_pipeline(**kwargs) -> Pipeline:
     return Pipeline([
@@ -13,6 +13,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             inputs="base_clientes_monopoly",
             outputs="cleaned_data",
             name="clean_and_rename_data_node",
+        ),
+        node(
+            func=create_target,
+            inputs="cleaned_data",
+            outputs="data_with_target",  # Salida con el target
+            name="create_target_node",
         ),
         node(
             func=transform_data,

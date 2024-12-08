@@ -19,4 +19,4 @@ transformed_data:
 
 prepared_data:
   type: pandas.CSVDataset
-  filepath: data/04_model_input/prepared_data.csv
+  filepath: data/04_feature/prepared_data.csv
