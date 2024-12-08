@@ -15,6 +15,9 @@ data/**
 
 # Specific files to ignore in data
 data/01_raw/Base_clientes_Monopoly.csv
+data/02_intermediate/cleaned_data.csv
+data/02_intermediate/renamed_data.csv
+data/03_primary/transformed_data.csv
 
 # ignore kedro-viz metadata
 .viz

@@ -3,4 +3,20 @@ base_clientes_monopoly:
   filepath: data/01_raw/Base_clientes_Monopoly.csv
   load_args:
     sep: ";"
-    chunksize: 1000
+  save_args:
+    index: False
+
+clean_and_rename_data:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/clean_and_rename_data.csv
+  save_args:
+    index: False
+
+
+transformed_data:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/transformed_data.csv
+
+prepared_data:
+  type: pandas.CSVDataset
+  filepath: data/04_model_input/prepared_data.csv
